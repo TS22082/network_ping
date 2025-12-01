@@ -36,6 +36,7 @@ func RunTest(cfg PingTestConfig) {
 	pinger.Count = count
 	pinger.Interval = interval
 	pinger.Timeout = time.Duration(count)*interval + time.Second*5
+	// Non-privileged mode allows running without root/admin rights
 	pinger.SetPrivileged(false)
 
 	pinger.OnSend = func(pkt *probing.Packet) {

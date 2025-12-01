@@ -16,7 +16,7 @@ func RunTest(cfg PingTestConfig) {
 
 	logidaApiKey := os.Getenv("LOGIDA_API_KEY")
 	if logidaApiKey == "" {
-		println("LOGIDA_API_KEY environment variable not set.")
+		fmt.Println("LOGIDA_API_KEY environment variable not set.")
 		return
 	}
 
@@ -97,5 +97,5 @@ func RunTest(cfg PingTestConfig) {
 	}
 
 	stats := pinger.Statistics()
-	println(stats.AvgRtt.String())
+	fmt.Println(stats.AvgRtt.String())
 }

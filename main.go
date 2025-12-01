@@ -12,8 +12,14 @@ import (
 	"github.com/joho/godotenv"
 )
 
-// Package main implements a network testing application that periodically runs ping tests
-// and reports results to the Logida API - https://logida.fly.dev/
+// Package main implements a network testing application that periodically runs ping tests using ICMP
+// and reports results to the Logida API for logging, and analysis.
+//
+// Before running, ensure you have a .env file with your LOGIDA_API_KEY set.
+// The application performs a ping test every 10 minutes and can be gracefully terminated with Ctrl+C.
+//
+// The ping itself is powered by the pro-bing library - https://github.com/prometheus-community/pro-bing
+// The logging dashboard the logs are posted to is powered by Logida - https://logida.fly.dev/
 func main() {
 	// You will need a .env file with your LOGIDA_API_KEY set.
 	if err := godotenv.Load(); err != nil {

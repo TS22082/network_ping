@@ -64,12 +64,12 @@ internal.RunTest(config)
 
 Build the executable:
 ```bash
-go build -o network-ping-logger
+go build -o NETWORK_TESTING/cmd
 ```
 
 Run the binary:
 ```bash
-./network-ping-logger
+./NETWORK_TESTING/cmd
 ```
 
 ## Project Structure

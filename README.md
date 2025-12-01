@@ -107,17 +107,6 @@ network_testing/
 - Verify the API key is correctly formatted
 - Check file permissions on `.env`
 
-### Permission denied errors on Linux/Mac
-ICMP ping may require elevated privileges:
-```bash
-sudo ./network-ping-logger
-```
-
-Or set capabilities:
-```bash
-sudo setcap cap_net_raw=+ep ./network-ping-logger
-```
-
 ### Tests not running
 - Check your internet connection
 - Verify the target host is reachable

@@ -81,7 +81,8 @@ func RunTest(cfg PingTestConfig) {
 			}
 		}
 
-		// Prepare the report data to be sent to Logida
+		// Prepare the report data to be sent to Logida, Under "data" I can send any key-value pairs
+		// I want to include in the log.
 		report := map[string]interface{}{
 			"Target":        stats.Addr,
 			"IP Address":    stats.IPAddr,
@@ -95,6 +96,7 @@ func RunTest(cfg PingTestConfig) {
 			"RTT StdDev":    stats.StdDevRtt.String(),
 		}
 
+		// Send the log report to Logida. message, type, clientId and data are required fields.
 		log := map[string]interface{}{
 			"message":  "Ping test completed",
 			"type":     "log",

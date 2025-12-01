@@ -42,8 +42,7 @@ func main() {
 	signal.Notify(sigChan, os.Interrupt, syscall.SIGTERM)
 
 	// If you want to run without default setting fill in the PingTestConfig struct here,
-	// then remove the .Default() call and use the struct directly in the RunTest call
-	// below.
+	// then remove the .Default() call and use the struct directly in the RunTest call below.
 	var config = internal.PingTestConfig{}
 	internal.RunTest(config.Default())
 
